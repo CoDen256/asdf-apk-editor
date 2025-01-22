@@ -19,7 +19,8 @@ download_release "$ASDF_INSTALL_VERSION" "$release_file.jar"
 #cat "$release_file.jar" >> "$release_file"
 
 cat <<EOF > "$release_file"
-java -jar $TOOL_NAME.jar "$@"
+install_dir=\$(dirname "\${BASH_SOURCE[0]}")
+java -jar \$install_dir/$TOOL_NAME.jar "\$@"
 EOF
 
 chmod +x "$release_file"
