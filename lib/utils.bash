@@ -5,7 +5,7 @@ set -euo pipefail
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for apk-editor.
 GH_REPO="https://github.com/REAndroid/APKEditor"
 TOOL_NAME="apk-editor"
-TOOL_TEST="apk-editor --help"
+TOOL_TEST="apk-editor -h"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
