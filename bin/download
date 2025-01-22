@@ -15,12 +15,7 @@ release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 download_release "$ASDF_INSTALL_VERSION" "$release_file.jar"
 
 # wow you can add a shebang to jar file
-#echo '#!/usr/bin/java -jar' > "$release_file.jar"
-#cat "$release_file.jar" >> "$release_file"
-
-cat <<EOF > "$release_file"
-install_dir=\$(dirname "\${BASH_SOURCE[0]}")
-java -jar \$install_dir/$TOOL_NAME.jar "\$@"
-EOF
+echo '#!/usr/bin/java -jar' > "$release_file"
+cat "$release_file.jar" >> "$release_file"
 
 chmod +x "$release_file"
